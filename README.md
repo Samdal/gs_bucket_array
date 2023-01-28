@@ -62,9 +62,11 @@ If you don't care about elements being "valid" you can use the fast iterator:
         uint32_t hndl = gs_bucket_array_iter_fast_get_hndl(ba, it);      // Get a normal handle from iterator
     }
 
-Internally the fast iterator is just   struct {uint32_t major; uint32_t minor;}
+Internally the fast iterator is just   `struct {uint32_t major; uint32_t minor;}`
+
+
 TIP:
-> You may store your own "bool enabled;" in your what you store in the bucket array.
+> You may store your own "bool enabled;" in what you store in the bucket array.
 > You can then use the fast iterator and check for this yourself.
 > However, note that this needs gs_bucket_array_new_ex where null_new_buckets is set to true,
 > this is because un-initialized data will otherwise interfere.

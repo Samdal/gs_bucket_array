@@ -253,7 +253,7 @@ __gs_bucket_array_fast_advance_func(gs_bucket_array_iter_fast* it, uint32_t buck
 
              Internally the fast iterator is just   struct {uint32_t major; uint32_t minor;}
              TIP:
-                > You may store your own "bool enabled;" in your what you store in the bucket array.
+                > You may store your own "bool enabled;" in what you store in the bucket array.
                 > You can then use the fast iterator and check for this yourself.
                 > However, note that this needs gs_bucket_array_new_ex where null_new_buckets is set to true,
                 > this is because un-initialized data will otherwise interfere.
