@@ -3,7 +3,7 @@
 # options
 CC     = clang
 LINKER = $(CC)
-CFLAGS =  -O3 -pthread -g -std=gnu99 -Wall -Wno-missing-braces -Wno-unused-variable -Wno-switch -Wno-unused-function -Wno-unused-variable -Wno-unused-but-set-variable -Wno-comment -Wno-typedef-redefinition #-Wfatal-errors
+CFLAGS =  -O0 -pthread -g -std=gnu99 -Wall -Wno-missing-braces -Wno-unused-variable -Wno-switch -Wno-unused-function -Wno-unused-variable -Wno-unused-but-set-variable -Wno-comment -Wno-typedef-redefinition #-Wfatal-errors
 LFLAGS = -ldl -lX11 -lXi -lm -lpthread -lavformat -lavcodec -lswscale -lavutil
 
 TARGET   = App
