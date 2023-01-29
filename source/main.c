@@ -212,7 +212,7 @@ __gs_bucket_array_fast_advance_func(gs_bucket_array_iter_fast* it, uint32_t buck
             This creates an interface almost identitcal to gs_slot_array.
             The major drawback of this is a somewhat slow iterator and insertion.
 
-            The guts of look somewhat like:
+            The guts look somewhat like:
 
                 gs_dyn_array(Type[bucket_size]) your_data;
                 gs_dyn_array(int64_t)  bit_field;

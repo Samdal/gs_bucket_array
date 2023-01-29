@@ -23,7 +23,7 @@ Because of this the container also has a bit-field that specifies which elements
 This creates an interface almost identitcal to gs_slot_array.
 The major drawback of this is a somewhat slow iterator and insertion.
 
-### The guts of look somewhat like:
+### The guts look somewhat like:
 
     gs_dyn_array(Type[bucket_size]) your_data;
     gs_dyn_array(int64_t)  bit_field;
@@ -36,7 +36,7 @@ The major drawback of this is a somewhat slow iterator and insertion.
     float val = gs_bucket_array_get(arr, hndl);
 
 
-### The Bucket array provides iterators:
+### The bucket array provides iterators:
 
     for (
         gs_bucket_array_iter it = gs_bucket_array_iter_new(ba);
@@ -72,7 +72,7 @@ TIP:
 > this is because un-initialized data will otherwise cause problems.
 
 
-### Bucket Array Usage:
+### Normal bucket array usage:
 
     gs_bucket_array(float) ba = gs_bucket_array_new(float, 100);    // Bucket array with internal 'float' data, where each bucket is 100 floats
     uint32_t hndl = gs_bucket_array_insert(ba, 3.145f);             // Inserts your data into the bucket array, returns handle to you
