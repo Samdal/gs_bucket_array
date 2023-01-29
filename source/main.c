@@ -202,15 +202,15 @@ __gs_bucket_array_fast_advance_func(gs_bucket_array_iter_fast* it, uint32_t buck
                 > Unlike the other gunslinger containers, the gs_bucket_array needs initialization.
                 > It is NOT allocated on use.
 
-            Bucket arrays are internally a list of pointers to fixed-size arrays:
-            This means that there are no re-allocs, and all your pointers will remain valid.
+            Bucket arrays are internally a list of pointers to fixed-size arrays;
+            This means that there are no realloc's, and all your pointers will remain valid.
 
             Due to the nature of this container it's very handy for managing both stuff that are
-            constant and dynamic in a singular place.
+            "constant" and dynamic in a singular place.
 
-            Because of this the container also has a bit-field that specifies which elements are in-use.
+            Because of this the container also has a bit-field that specifies which elements are in use.
             This creates an interface almost identitcal to gs_slot_array.
-            The major drawback of this is a somewhat slow iterator (and a non-"instant" insertion).
+            The major drawback of this is a somewhat slow iterator and insertion.
 
             The guts of look somewhat like:
 
@@ -236,7 +236,7 @@ __gs_bucket_array_fast_advance_func(gs_bucket_array_iter_fast* it, uint32_t buck
                     float* vp = gs_bucket_array_getp(ba, it);      // Get value pointer using iterator
                 }
 
-             This iterator gather a index into the bucket array, which you later can use to get pointers/values
+             This iterator gathers a index into the bucket array, which you later can use to get pointers/values
              through the indirection.
              However you might not always need this.
              If you don't care about elements being "valid" you can use the fast iterator:
@@ -256,7 +256,7 @@ __gs_bucket_array_fast_advance_func(gs_bucket_array_iter_fast* it, uint32_t buck
                 > You may store your own "bool enabled;" in what you store in the bucket array.
                 > You can then use the fast iterator and check for this yourself.
                 > However, note that this needs gs_bucket_array_new_ex where null_new_buckets is set to true,
-                > this is because un-initialized data will otherwise interfere.
+                > this is because un-initialized data will otherwise cause problems.
 
 
              Bucket Array Usage:
